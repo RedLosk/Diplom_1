@@ -45,20 +45,8 @@ class TestBurger:
         assert burger.ingredients[1] == mock_ingredient2
         assert burger.ingredients[2] == mock_ingredient3
 
-<<<<<<< HEAD
     def test_remove_ingredient(self, burger_with_three_ingredients):
         burger, mock_ingredient1, mock_ingredient2, mock_ingredient3 = burger_with_three_ingredients
-=======
-    def test_remove_ingredient(self):
-        burger = Burger()
-        mock_ingredient1 = Mock(spec=Ingredient)
-        mock_ingredient2 = Mock(spec=Ingredient)
-        mock_ingredient3 = Mock(spec=Ingredient)
-
-        burger.add_ingredient(mock_ingredient1)
-        burger.add_ingredient(mock_ingredient2)
-        burger.add_ingredient(mock_ingredient3)
->>>>>>> 03a2ed1b73b5a633d88c6ad2bbcd4f26eafedc63
 
         burger.remove_ingredient(1)
 
@@ -66,20 +54,8 @@ class TestBurger:
         assert burger.ingredients[0] == mock_ingredient1
         assert burger.ingredients[1] == mock_ingredient3
 
-<<<<<<< HEAD
     def test_move_ingredient(self, burger_with_three_ingredients):
         burger, mock_ingredient1, mock_ingredient2, mock_ingredient3 = burger_with_three_ingredients
-=======
-    def test_move_ingredient(self):
-        burger = Burger()
-        mock_ingredient1 = Mock(spec=Ingredient)
-        mock_ingredient2 = Mock(spec=Ingredient)
-        mock_ingredient3 = Mock(spec=Ingredient)
-
-        burger.add_ingredient(mock_ingredient1)
-        burger.add_ingredient(mock_ingredient2)
-        burger.add_ingredient(mock_ingredient3)
->>>>>>> 03a2ed1b73b5a633d88c6ad2bbcd4f26eafedc63
 
         burger.move_ingredient(2, 0)
 
@@ -94,6 +70,7 @@ class TestBurger:
         (1, 0, [1, 0, 2]),  # Перемещение из середины в начало
         (0, 1, [1, 0, 2]),  # Перемещение из начала в середину
     ])
+
     def test_move_ingredient_parameterized(self, index, new_index, expected_order):
         burger = Burger()
         mock_ingredient0 = Mock(spec=Ingredient)
@@ -111,21 +88,9 @@ class TestBurger:
             assert burger.ingredients[i] == ingredients[expected_idx]
 
     @pytest.mark.parametrize('remove_index', [0, 1, 2])
-<<<<<<< HEAD
     def test_remove_ingredient_parameterized(self, burger_with_three_ingredients, remove_index):
         burger, mock_ingredient1, mock_ingredient2, mock_ingredient3 = burger_with_three_ingredients
-=======
-    def test_remove_ingredient_parameterized(self, remove_index):
-        burger = Burger()
-        mock_ingredient1 = Mock(spec=Ingredient)
-        mock_ingredient2 = Mock(spec=Ingredient)
-        mock_ingredient3 = Mock(spec=Ingredient)
-
-        burger.add_ingredient(mock_ingredient1)
-        burger.add_ingredient(mock_ingredient2)
-        burger.add_ingredient(mock_ingredient3)
->>>>>>> 03a2ed1b73b5a633d88c6ad2bbcd4f26eafedc63
-
+  
         expected_ingredients = [mock_ingredient1, mock_ingredient2, mock_ingredient3]
         expected_ingredients.pop(remove_index)
 
